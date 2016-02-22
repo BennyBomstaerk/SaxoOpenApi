@@ -29,6 +29,7 @@
     <Content Include="Scripts\es5-shim.min.js" />
     <Content Include="Scripts\es6-promise.js" />
     <Content Include="Scripts\fetch.js" />
+    <Content Include="Scripts\iit-openapi-4.1.0.js" />
     <Content Include="Scripts\iit-shared-js-2.1.0.js" />
     <Content Include="Scripts\jasmine\boot.js" />
     <Content Include="Scripts\jasmine\console.js" />

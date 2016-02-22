@@ -122,7 +122,7 @@ function runTests(options) {
 
             var positionsSubscription = streaming.createSubscription('port', 'v1/positions/subscriptions', subscriptionArgs,
                             (update, fullMsg) => {
-                                expect(update.length).toEqual(jasmine.any(Number));
+                                expect(update).toEqual(jasmine.any(Object));
                                 streaming.disposeSubscription(positionsSubscription);
                                 done();
                             });

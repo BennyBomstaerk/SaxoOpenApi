@@ -14,7 +14,7 @@
     var streaming = openApi.streaming;
 
 
-    xdescribe("when retrieving 1 minute chart for EURUSD", () => {
+    describe("when retrieving 1 minute chart for EURUSD", () => {
         var result = null;
 
         beforeEach(function (done) {
@@ -159,7 +159,7 @@
                     Arguments: {
                         //Mode: "UpTo",
                         //Time: currentTime,
-                        Time:"2016-01-28T00:00:08.460Z",
+                        //Time:"2016-01-28T00:00:08.460Z",
                         Uic: 21,
                         AssetType: "FxSpot",
                         Horizon: 1,
@@ -173,7 +173,8 @@
                                 (update, fullMsg) => {
                                     result = update;
                                     console.log("chart subscription - success", update);
-                                    expect(update.length).toEqual(jasmine.any(Number));
+                                    expect(fullMsg).toBe(1);
+                                    expect(update).toEqual(jasmine.any(Object));
                                     streaming.disposeSubscription(chartSubScription);
                                     done();
                                 }, function (res) {
@@ -190,33 +191,33 @@
         });
 
         it("returns data", function () {
-            expect(result.status).toEqual(200);
-            expect(result.response).toEqual(jasmine.any(Object));
+            //expect(result.status).toEqual(200);
+            expect(result).toEqual(jasmine.any(Object));
         }),
-        xit("returns both ChartInfo, DisplayAndFormat, Data objects and a DataVersion", function () {
-            expect(result.response.ChartInfo).toEqual(jasmine.any(Object));
-            expect(result.response.Data).toEqual(jasmine.any(Object));
-            expect(result.response.DisplayAndFormat).toEqual(jasmine.any(Object));
-            expect(result.response.DataVersion).toBeGreaterThan(0);
+        it("returns both ChartInfo, DisplayAndFormat, Data objects and a DataVersion", function () {
+            expect(result.ChartInfo).toEqual(jasmine.any(Object));
+            expect(result.Data).toEqual(jasmine.any(Object));
+            expect(result.DisplayAndFormat).toEqual(jasmine.any(Object));
+            expect(result.DataVersion).toBeGreaterThan(0);
         });
-        xit("returns correct ChartInfo", function () {
-            var chartInfo = result.response.ChartInfo;
+        it("returns correct ChartInfo", function () {
+            var chartInfo = result.ChartInfo;
             expect(chartInfo.DelayedByMinutes).toEqual(0);
             expect(chartInfo.ExchangeId).toEqual("SBFX");
             expect(typeof (chartInfo.FirstSampleTime)).toEqual('string');
             expect(chartInfo.Horizon).toEqual(1);
             expect(chartInfo.TimeZoneId).toEqual(0);
         })
-        xit("returns correct DisplayAndFormat", function () {
-            var displayAndFormat = result.response.DisplayAndFormat;
+        it("returns correct DisplayAndFormat", function () {
+            var displayAndFormat = result.DisplayAndFormat;
             expect(displayAndFormat.Currency).toEqual("USD");
             expect(displayAndFormat.Decimals).toEqual(5);
             expect(displayAndFormat.Description).toBe("Euro/US Dollar");
             expect(displayAndFormat.Format).toBe("AllowDecimalPips");
             expect(displayAndFormat.Symbol).toBe("EURUSD");
         })
-        xit("returns correct Data", function () {
-            var data = result.response.Data;
+        it("returns correct Data", function () {
+            var data = result.Data;
             expect(data.length).toBe(100);
             var sample = data[0];
             expect(sample.CloseAsk).toBeGreaterThan(0);
