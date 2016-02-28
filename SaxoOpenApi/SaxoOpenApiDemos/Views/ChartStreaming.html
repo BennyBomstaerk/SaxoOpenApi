@@ -1,0 +1,63 @@
+﻿<!<!DOCTYPE html>
+<html>
+<head>
+    <script src="../Scripts/jquery-2.2.0.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h3>Saxo OpenAPI - Chart Example - Streaming</h3>
+        <p>This example sets up a subscription to EURUSD 1 min data. </p>
+        <p>The subscription response (the snapshot) includes the latest 100 samples. Updates will then be received over the streaming channel.</p>
+        <p>It is also possible to retrieve older samples in chunks of 1200 samples.</p>
+       
+        <h4>Get Chart Data</h4>
+        <form id="chartParams" class="form-inline">
+            <div>
+                <div class="form-group">
+                    <label for="assetType">AssetType:</label>
+                    <input type="text" id="assetType" name="assetType" value="FxSpot" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label for="uic">Uic:</label>
+                    <input type="text" id="uic" name="uic" value="21" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label for="horizon">Horizon:</label>
+                    <input type="text" id="horizon" name="horizon" value="1" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label for="timeZoneId">TimeZoneId:</label>
+                    <input type="text" id="timeZoneId" name="timeZoneId" value="0" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <a href="#" id="getCurrentChartBtn"  class="btn btn-primary">Get Current Chart</a>
+                    <a href="#" id="getOlderSamplesBtn"  hidden class="btn btn-primary" style="display: none">Get Older Samples</a>
+                    <a href="#" id="testBtn" class="btn btn-primary">Test</a>
+                </div>
+            </div>
+        </form>
+        <div id="container" style="height: 700px; min-width: 310px"></div>
+    </div>
+
+    <script src="https://code.highcharts.com/stock/highstock.js"></script>
+    <script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
+    <script src="../Scripts/jquery.signalR-2.0.3.js"></script>
+
+    <script src="../Scripts/app/config.js"></script>
+    <script src="../Scripts/iit-openapi-4.1.0.js"></script>
+/*
+    <script src="../Scripts/app/iit.js"></script>
+    */
+    <script src="../Scripts/app/renderer.js"></script>
+    <script src="../Scripts/app/highchart.js"></script>
+    <script src="../Scripts/app/openapicommunication.js"></script>
+
+    <script src="../Scripts/app/ChartStreaming.js"></script>
+
+    <script type="text/javascript">
+        var chartStreaming = new OpenApiChartDemo.ChartStreaming();
+    </script>
+</body>
+</html>

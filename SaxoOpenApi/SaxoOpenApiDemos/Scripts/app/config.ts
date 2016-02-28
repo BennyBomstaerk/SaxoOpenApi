@@ -1,0 +1,7 @@
+﻿const token = "eyJhbGciOiJFUzI1NiIsIng1dCI6IkEwMEFDMEE1MzcxMDRBMTM1RDg0NkM4NkFDN0ZERkU1RUE4REIyOTkifQ.eyJvYWEiOiI3Nzc3MCIsImlzcyI6Im9hIiwiYWlkIjoiMTIiLCJ1aWQiOiJPVjZaTDItQVlCMFZ2VzJGekVxejdBPT0iLCJjaWQiOiJPVjZaTDItQVlCMFZ2VzJGekVxejdBPT0iLCJpc2EiOiJUcnVlIiwidGlkIjoiMjAwNSIsInNpZCI6ImRmZDlmODFmYzA0ODRjYWVhMDUxZDUwMGQ1MDE5YmE3IiwiZGdpIjoiODIiLCJleHAiOiIxNDU2NjYxNTk4In0.k4rAxBbNjuGbxDp0UnSZCxa4xHN2FhK-jvoUbWAkY56LXdiecWG-6om3VvlS46WFAppZ5YCMP3UnOsLL2_GdCA";
+const baseUrl = 'https://developer.saxobank.com/sim/openapi';
+
+var config = {
+    token: token,
+    baseUrl: baseUrl
+};
