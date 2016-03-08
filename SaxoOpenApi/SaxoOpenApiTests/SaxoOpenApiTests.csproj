@@ -22,9 +22,15 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\app\demodatafeedcontrol.css" />
     <Content Include="Content\jasmine\jasmine.css" />
     <Content Include="Content\jasmine\jasmine_favicon.png" />
+    <Content Include="DemoBatsPrices.html" />
+    <Content Include="DemoDataFeedControl.html" />
     <Content Include="index.html" />
+    <Content Include="Scripts\app\batsinstruments.js" />
+    <Content Include="Scripts\app\batspricescontrol.js" />
+    <Content Include="Scripts\app\demodatafeedcontrol.js" />
     <Content Include="Scripts\es5-shim.js" />
     <Content Include="Scripts\es5-shim.min.js" />
     <Content Include="Scripts\es6-promise.js" />

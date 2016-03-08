@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <link href="Content/app/demodatafeedcontrol.css" rel="stylesheet" />
+    <script src="Scripts/es5-shim.js"></script>
+    <script src="Scripts/es6-promise.js"></script>
+    <script src="Scripts/fetch.js"></script>
+    <script src="Scripts/jquery-2.2.0.js"></script>
+    <script src="Scripts/jquery.signalR-2.0.3.js"></script>
+    <!--source file-->
+    <!--
+    <script src="Scripts/iit-shared-js-2.1.0.js"></script>
+     -->
+    <script src="Scripts/iit-openapi-4.1.0.js"></script>
+    <!--test files-->
+    <script src="Scripts/spec/config.js"></script>
+    <script src="Scripts/spec/openapisetup.js"></script>
+
+</head>
+<body>
+    <h1>Prices</h1>
+    <table id="pricetable" ></table>
+    <h1>NetPositions</h1>
+    <table id="netpositionstable"></table>
+    <h1>Positions</h1>
+    <table id="positionstable"></table>
+    <h1>Orders</h1>
+    <table id="orderstable"></table>
+
+
+    <script src="Scripts/app/demodatafeedcontrol.js"></script>
+    <script type="text/javascript">
+        var dcdfc = new DemoDataFeedControl();
+        dcdfc.loadPrices();
+        dcdfc.loadNetPositions();
+        dcdfc.loadPositions();
+        dcdfc.loadOrders();
+
+    </script>
+</body>
+</html>
