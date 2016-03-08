@@ -41,7 +41,6 @@
     <TypeScriptCompile Include="Scripts\app\globals.ts" />
     <TypeScriptCompile Include="Scripts\app\highchart.ts" />
     <TypeScriptCompile Include="Scripts\app\iit.ts" />
-    <TypeScriptCompile Include="Scripts\app\openapi.ts" />
     <TypeScriptCompile Include="Scripts\app\openapichart.ts" />
     <TypeScriptCompile Include="Scripts\app\openapicommunication.ts" />
     <TypeScriptCompile Include="Scripts\app\renderer.ts" />

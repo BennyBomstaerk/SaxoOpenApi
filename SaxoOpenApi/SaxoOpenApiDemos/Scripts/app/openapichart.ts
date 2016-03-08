@@ -43,14 +43,14 @@
         DataVersion?: number,
         DisplayAndFormat?: InstrumentDisplayAndFormat,
     }
-
+/*
     export interface ChartData {                //Todo - do we have inheritance?
         ChartInfo?: ChartInfo,
         Data?: ChartSample[],
         DataVersion?: number,
         DisplayAndFormat?: InstrumentDisplayAndFormat,
     }
-
+*/
     
     export interface OpenApiChartStreamingResponse {
         ReferenceId: string,

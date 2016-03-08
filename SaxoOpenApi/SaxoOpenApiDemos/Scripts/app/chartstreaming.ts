@@ -1,17 +1,8 @@
 ﻿
-interface openApiCommunication {
-    transport: any,
-    streaming: any
-}
-declare function openApiSetup(config: any): openApiCommunication;
-
-
-
-
 module OpenApiChartDemo {
     "use strict";
 
-    interface chartParameters {
+    interface ChartParameters {
         assetType: string,
         uic: number,
         horizon: number,
@@ -24,13 +15,13 @@ module OpenApiChartDemo {
             this.attachButtons();
             this.openApi = new Utilities.OpenApiCommunication(config);
         }
+        private openApi: Utilities.OpenApiCommunication;
         private chart = new HighChart();
-        private openApi: openApiCommunication;
         private chartSubScription: iit.openapi.Subscription = null;
         private dataVersion = 0;
         private displayAndFormat: InstrumentDisplayAndFormat = null;
         private earliestSampleTime: string = null;
-        private chartParameters: chartParameters = null;
+        private chartParameters: ChartParameters = null;
 
         private attachButtons = () => {
             $("#getCurrentChartBtn").click(this.getCurrentChart);
@@ -83,7 +74,7 @@ module OpenApiChartDemo {
                 });
         }
 
-        private getChartParameters = (): chartParameters => {
+        private getChartParameters = (): ChartParameters => {
             return {
                 assetType: $("#assetType").val(),
                 uic: $("#uic").val(),

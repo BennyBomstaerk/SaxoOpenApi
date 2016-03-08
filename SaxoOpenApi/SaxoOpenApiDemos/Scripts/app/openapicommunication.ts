@@ -1,6 +1,4 @@
 ﻿module Utilities {
-    
-
 
     export class OpenApiCommunication {
         constructor(config: any) {
